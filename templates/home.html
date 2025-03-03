@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for ui in u %}
+        {{ ui.name }}
+        {{ui.code | safe }}
+    {% endfor %}
+    <h1>Form</h1>
+    <form method="post">
+        {{ form.csrf_token }}
+        {{ form.code.label }} {{ form.code }}
+        {{form.submit}}
+    </form>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='code') }}
+</body>
+</html>
